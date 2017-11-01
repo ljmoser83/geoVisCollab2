@@ -1,0 +1,20 @@
+{
+  "name": "geoVisCollab2",
+  "version": "1.0.0",
+  "description": "Second Collaborative Geovisualization Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljmoser83/geoVisCollab2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljmoser83/geoVisCollab2/issues"
+  },
+  "homepage": "https://github.com/ljmoser83/geoVisCollab2#readme"
+}
