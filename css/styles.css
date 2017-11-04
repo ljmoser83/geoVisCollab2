@@ -19,10 +19,11 @@ body {
     position: absolute;
     z-index: 1000;
     /* place above map */
-    bottom: 18px;
-    right: 18px;
+    top: 9px;
+    right: 9px;
     padding: 6px 12px;
     background: rgba(256, 256, 256, .9);
+    border: 1px solid black;
 }
 
 #ui ul {

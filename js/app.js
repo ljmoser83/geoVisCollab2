@@ -1,6 +1,6 @@
 (function () {
     var options = {
-        center: [38, -85.75],
+        center: [38, -85.5],
         zoom: 8
     }
 
