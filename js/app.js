@@ -12,18 +12,18 @@
     }).addTo(map);
 
     $.when(
-        $.getJSON('data/regions.json'),
+        $.getJSON('data/physio-regions.json'),
         $.getJSON('data/vividcolors.json'),
         $.getJSON('data/campsites.json')
     ).done(function (regions, colors, campsites) {
 
-        console.log(districts) // will be object with 3 props
+        console.log(regions) // will be object with 3 props
 
         regions = regions[0];
         colors = colors[0];
         campsites = campsites[0];
 
-        console.log(regions) // will just be our geojson
+        console.log(regions.features[0].properties.REGION) // will just be our geojson
 
         // store a reference to the HTML list
         var legendList = $('#legend-list');
@@ -31,7 +31,7 @@
         // loop through the features and create a new
         // list item for each feature in the legend
         for (var i = 1; i <= regions.features.length; i++) {
-            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Vivid[10][i - 1] + '" href="#">District ' + i + ' (<span></span>)</a></li>');
+            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Vivid[10][i - 1] + '" href="#"> ' + regions.features[i-1].properties.REGION +'  (<span></span>)</a></li>');
         }
 
 
@@ -54,7 +54,7 @@
                         fillOpacity: .8
                     });
 
-                    $('#region-' + feature.properties.council_di).addClass('highlight');
+                    $('#region-' + feature.properties.region_id).addClass('highlight');
                 });
 
                 layer.on('mouseout', function () {
@@ -102,7 +102,7 @@
             var coords = feature.geometry.coordinates,
                 marker = L.marker([coords[1], coords[0]]);
             // bind a tooltip to the marker
-            marker.bindTooltip("Campsite: " + feature.properties.name);
+            marker.bindTooltip("Campsite: " + feature.properties.PARK_NAME);
             // add the marker to the markerClusterGroup
             markers.addLayer(marker);
 
