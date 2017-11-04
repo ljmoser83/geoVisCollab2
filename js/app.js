@@ -12,9 +12,9 @@
     }).addTo(map);
 
     $.when(
-        $.getJSON('data/physio-regions.json'),
+        $.getJSON('data/physio-regions2.json'),
         $.getJSON('data/vividcolors.json'),
-        $.getJSON('data/campsites.json')
+        $.getJSON('data/campsites2.json')
     ).done(function (regions, colors, campsites) {
 
         console.log(regions) // will be object with 3 props
@@ -31,7 +31,7 @@
         // loop through the features and create a new
         // list item for each feature in the legend
         for (var i = 1; i <= regions.features.length; i++) {
-            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Vivid[10][i - 1] + '" href="#"> ' + regions.features[i-1].properties.REGION +'  (<span></span>)</a></li>');
+            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Vivid[10][i - 1] + '" href="#"> ' + regions.features[i - 1].properties.REGION + '  (<span></span>)</a></li>');
         }
 
 
@@ -79,7 +79,7 @@
             // loop through the districts polygons
             regionsLayerGroup.eachLayer(function (layer) {
                 // if the district id matches the one we're mousing over
-                if (layer.feature.properties.region_id === regionNum) {
+                if (layer.feature.properties.region_id == regionNum) {
                     // change the layer style
                     layer.setStyle({
                         fillOpacity: .8
