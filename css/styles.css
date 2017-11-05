@@ -22,12 +22,12 @@ h1 {
     z-index: 1000;
     top: 9px;
     left: 30px;
-    margin-top: 18px;
+    margin-top: 3px;
     margin-left: 18px;
     padding: 6px 12px;
     background: rgba(256, 256, 256, .9);
     border: 1px solid black;
-
+    border-radius: 0.1em 0.1em;
 }
 
 #ui {
@@ -39,6 +39,7 @@ h1 {
     padding: 6px 12px;
     background: rgba(256, 256, 256, .9);
     border: 1px solid black;
+    border-radius: 0.2em 0.2em;
 }
 
 #ui ul {
