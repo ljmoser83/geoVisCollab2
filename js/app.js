@@ -1,14 +1,12 @@
 (function () {
-<<<<<<< Updated upstream
-    
-})();
-=======
+
     var options = {
         center: [38, -85.5],
         zoom: 8
     }
 
     var map = L.map('map', options);
+
 
     // L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}.png', {
     //     maxZoom: 18,
@@ -19,6 +17,11 @@
         maxZoom:18,
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community;  MAP DESIGNED 11-2017 BY <a href="https://ljmoser83.github.io" target=external >ljmoser83</a> and <a href="https://digitalfootprints.github.io" target=external >digitalfootprints</a>'
     }).addTo(map);
+//     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}.png', {
+//         maxZoom: 18,
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy;<a href="https://carto.com/attribution">CARTO</a>'
+ 
+//     })
 
     $.when(
         $.getJSON('data/physio-regions2.json'),
@@ -121,4 +124,4 @@
     });
 
 })();
->>>>>>> Stashed changes
+
