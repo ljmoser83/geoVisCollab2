@@ -18,10 +18,16 @@ body {
 
 
 h1 {
+    position: absolute;
+    z-index: 1000;
+    top: 9px;
+    left: 30px;
     margin-top: 18px;
     margin-left: 18px;
-    color: white;
- 
+    padding: 6px 12px;
+    background: rgba(256, 256, 256, .9);
+    border: 1px solid black;
+
 }
 
 #ui {
@@ -56,4 +62,3 @@ h1 {
     font-weight: bold;
 
 }
-
