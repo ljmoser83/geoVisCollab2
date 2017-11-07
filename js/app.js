@@ -13,7 +13,7 @@
     //AJAX JQuery when().done method that loads data and declares a callback function to begin adding data to map
     $.when(
         $.getJSON('data/physio-regions2.json'),
-        $.getJSON('data/vividcolors.json'),
+        $.getJSON('data/safecolors.json'),
         $.getJSON('data/campsites2.json')
     ).done(function (regions, colors, campsites) {
 
@@ -28,7 +28,7 @@
         // loop through the features and create a new
         // list item for each feature in the legend
         for (var i = 1; i <= regions.features.length; i++) {
-            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Vivid[10][i - 1] + '" href="#"> ' + regions.features[i - 1].properties.REGION + '  (<span></span>)</a></li>');
+            legendList.append('<li class="legend-item" id="region-' + i + '"><a style="color:' + colors.Safe[10][i - 1] + '" href="#"> ' + regions.features[i - 1].properties.REGION + '  (<span></span>)</a></li>');
         }
 
 
@@ -38,7 +38,7 @@
                 // use the colors object to style
                 // each polygon a unique color
                 return {
-                    color: colors.Vivid[10][feature.properties.region_id - 1],
+                    color: colors.Safe[10][feature.properties.region_id - 1],
                     fillOpacity: .6
                 }
             },
