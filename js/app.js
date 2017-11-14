@@ -73,6 +73,17 @@
             highlightRegion(num);
         });
 
+        $('.legend-item').on('click', function() {
+            var num = this.id.replace('region-', '');
+            regionsLayerGroup.eachLayer(function (layer) {
+                if (layer.feature.properties.region_id == num) {
+                    map.flyToBounds(layer.getBounds(), {
+                        padding: [20,20]
+                    })
+                }
+            });
+        });
+
         function highlightRegion(regionNum) {
             // loop through the regions polygons
             regionsLayerGroup.eachLayer(function (layer) {
